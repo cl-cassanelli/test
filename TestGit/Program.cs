@@ -148,11 +148,8 @@ namespace TestGit
             for (int i = 0; i < n; i++)
             {
                 temp = a;
-                Console.WriteLine(temp);
                 a = b;
-                Console.WriteLine(a);
                 b = temp + b;
-                Console.WriteLine(b);
             }
             Console.WriteLine($"Il numero di Fibonacci alla posizione {n} è {a}");
         }
