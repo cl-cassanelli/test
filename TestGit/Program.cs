@@ -11,6 +11,7 @@ namespace TestGit
             Console.WriteLine("3) Numeri primi");
             Console.WriteLine("4) Somma numeri");
             Console.WriteLine("5) Conta vocali");
+            Console.WriteLine("6) Fibonacci");
             Console.Write("Scegli un programma: ");
             int scelta = int.Parse(Console.ReadLine());
             int numero = 0;
@@ -30,6 +31,7 @@ namespace TestGit
                     numero = int.Parse(Console.ReadLine());
                     Fattoriale(numero);
                     break;
+
                 case 3:
                     // Verificare se un numero è primo
                     Console.Write("Inserisci un numero: ");
@@ -41,6 +43,7 @@ namespace TestGit
                     else
                         Console.WriteLine($"{numero} non è un numero primo.");
                     break;
+
                 case 4:
                     // Somma numeri pari fino a 100
                     Console.Write("Inserisci un numero: ");
@@ -52,6 +55,13 @@ namespace TestGit
                     Console.Write("Inserisci una frase: ");
                     string frase = Console.ReadLine();
                     ContaVocali(frase);
+                    break;
+
+                case 6:
+                    // Fibonacci
+                    Console.Write("Inserisci un numero: ");
+                    numero = int.Parse(Console.ReadLine());
+                    Fibonacci(numero);
                     break;
 
                 default:
@@ -129,9 +139,22 @@ namespace TestGit
                 }
             }
 
-            Console.WriteLine(count);
+            Console.WriteLine("Vocali trovate: " + count);
         }
 
-
+        static void Fibonacci(int n)
+        {
+            int a = 0, b = 1, temp;
+            for (int i = 0; i < n; i++)
+            {
+                temp = a;
+                Console.WriteLine(temp);
+                a = b;
+                Console.WriteLine(a);
+                b = temp + b;
+                Console.WriteLine(b);
+            }
+            Console.WriteLine($"Il numero di Fibonacci alla posizione {n} è {a}");
+        }
     }
 }
