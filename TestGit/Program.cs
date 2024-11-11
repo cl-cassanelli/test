@@ -12,6 +12,7 @@ namespace TestGit
             Console.WriteLine("4) Somma numeri");
             Console.WriteLine("5) Conta vocali");
             Console.WriteLine("6) Fibonacci");
+            Console.WriteLine("7) Numeri random");
             Console.Write("Scegli un programma: ");
             int scelta = int.Parse(Console.ReadLine());
             int numero = 0;
@@ -62,6 +63,11 @@ namespace TestGit
                     Console.Write("Inserisci un numero: ");
                     numero = int.Parse(Console.ReadLine());
                     Fibonacci(numero);
+                    break;
+
+                case 7:
+                    // Indovinare numero random
+                    MiniGame();
                     break;
 
                 default:
@@ -152,6 +158,19 @@ namespace TestGit
                 b = temp + b;
             }
             Console.WriteLine($"Il numero di Fibonacci alla posizione {n} è {a}");
+        }
+
+        static void MiniGame()
+        {
+            Random r = new Random();
+            int rInt = r.Next(0, 100);
+            int risp = 0;
+            do
+            {
+                Console.WriteLine("Tenta la fortuna, inserisci un numero da 1 a 100");
+                risp = int.Parse(Console.ReadLine());
+            } while (rInt != risp);
+            Console.WriteLine("Hai indovinato!");
         }
     }
 }
